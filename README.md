@@ -105,3 +105,9 @@ Add variable texts records with the following labels
 
 * 785325 Request was already processed
 * 790051 Request was not found
+
+## Thanks to 
+Frans van der Veen.
+<br/>May the force be with you!
+
+Ported to TYPO3 10.4 by Sjoerd Zonneveld
