@@ -50,7 +50,7 @@ class FrontendUserGroupRepository extends \TYPO3\CMS\Extbase\Domain\Repository\F
             ->where(
                 $queryBuilder->expr()->in(
                     'uid',
-                    $queryBuilder->createNamedParameter([0, 1, 2, 3], Connection::PARAM_INT_ARRAY)
+                    $queryBuilder->createNamedParameter($userGroupIds, Connection::PARAM_INT_ARRAY)
                 ),
             );
 
