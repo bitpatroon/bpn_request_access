@@ -1,0 +1,20 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      xmlns:sl="http://typo3.org/ns/BPN/BpnRequestAccess/ViewHelpers"
+      xmlns:vt="http://typo3.org/ns/BPN/BpnVariableText/ViewHelpers"
+      data-namespace-typo3-fluid="true"
+      lang="en">
+<f:layout name="Default"/>
+
+Template description
+
+<f:section name="main">
+    <f:render partial="Errors" arguments="{errors:errors}" />
+    <vt:variableText labelName="request_access_requested"/>
+    <p>
+        <vt:variableText labelName="request_access_requested_another"/>
+    </p>
+    <p>
+        <f:link.action noCacheHash="1" action="requestAccessForm" class="btn btn-primary"><f:translate key="send_new_request"/></f:link.action>
+    </p>
+</f:section>
+</html>

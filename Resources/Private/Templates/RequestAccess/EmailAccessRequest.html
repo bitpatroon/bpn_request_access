@@ -1,0 +1,42 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      xmlns:sl="http://typo3.org/ns/BPN/BpnRequestAccess/ViewHelpers"
+      xmlns:vt="http://typo3.org/ns/BPN/BpnVariableText/ViewHelpers"
+      data-namespace-typo3-fluid="true"
+      lang="en">
+<f:cache.disable>
+    <vt:variableText labelName="request_access_email_body">
+        <vt:variableText.marker name="requesting_user_full_name"><f:render partial="UsersName" arguments="{user:request.userRequestSource}"/></vt:variableText.marker>
+        <vt:variableText.marker name="requesting_user_email"><f:render partial="UserNameOrEmail" arguments="{user:request.userRequestSource}"/></vt:variableText.marker>
+        <vt:variableText.marker name="target_user_full_name"><f:render partial="UsersName" arguments="{user:request.userRequestTarget}"/></vt:variableText.marker>
+        <vt:variableText.marker name="target_user_email"><f:render partial="UserNameOrEmail" arguments="{user:request.userRequestTarget}"/></vt:variableText.marker>
+        <vt:variableText.marker name="requesting_usergroup">{request.userGroup.title}</vt:variableText.marker>
+        <vt:variableText.marker name="user_expiring_groups"><f:if condition="{activeExpiringGroups}">
+            <f:then><ul>
+                    <f:for each="{activeExpiringGroups}"
+                           as="item">
+                        <li>{item.group.title} <f:translate key="from"/>
+                            <f:format.date format="d-m-Y">{item.startDate}</f:format.date>
+                            <f:translate key="up_until"/>
+                            <f:format.date format="d-m-Y">{item.endDate}</f:format.date>
+                        </li>
+                    </f:for>
+                </ul></f:then>
+            <f:else><f:translate key="none"/></f:else>
+            </f:if></vt:variableText.marker>
+        <vt:variableText.marker name="start_date"><f:format.date format="d-m-Y">{startTime}</f:format.date></vt:variableText.marker>
+        <vt:variableText.marker name="end_date"><f:format.date format="d-m-Y">{endTime}</f:format.date></vt:variableText.marker>
+        <vt:variableText.marker name="link_allow_access"><f:link.action pageUid="{landingPage}"
+                           noCacheHash="1"
+                           action="grantAccess"
+                           arguments="{verificationCode: request.verificationCode}"
+                           absolute="1">Goedkeuren
+            </f:link.action></vt:variableText.marker>
+        <vt:variableText.marker name="link_deny_access"><f:link.action pageUid="{landingPage}"
+                           noCacheHash="1"
+                           action="denyAccess"
+                           arguments="{verificationCode: request.verificationCode}"
+                           absolute="1">Afwijzen
+            </f:link.action></vt:variableText.marker>
+    </vt:variableText>
+</f:cache.disable>
+</html>

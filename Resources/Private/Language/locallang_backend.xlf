@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff version="1.0" standalone="yes">
+  <file source-language="en" datatype="plaintext" original="messages" data="2019-01-09T11-55-16" product-name="bpn_request_access">
+    <header/>
+    <body>
+      <trans-unit id="tx_bpnrequestaccess_domain_model_request" xml:space="preserve">
+        <source>Verzoek toegang digitale examenprojecten</source>
+      </trans-unit>
+      <trans-unit id="tx_bpnrequestaccess_domain_model_request.title" xml:space="preserve">
+        <source>Beschrijving verzoek</source>
+      </trans-unit>
+      <trans-unit id="tx_bpnrequestaccess_domain_model_request.verification_code" xml:space="preserve">
+        <source>Verzoek code</source>
+      </trans-unit>
+      <trans-unit id="tx_bpnrequestaccess_domain_model_request.start" xml:space="preserve">
+        <source>Toegang vanaf</source>
+      </trans-unit>
+      <trans-unit id="tx_bpnrequestaccess_domain_model_request.duration" xml:space="preserve">
+        <source>Lengte toegang</source>
+      </trans-unit>
+      <trans-unit id="tx_bpnrequestaccess_domain_model_request.user_request_target" xml:space="preserve">
+        <source>Gebruiker die toegang vraagt</source>
+      </trans-unit>
+      <trans-unit id="tx_bpnrequestaccess_domain_model_request.user_request_source" xml:space="preserve">
+        <source>Gebruiker die toegang aanvraagt</source>
+      </trans-unit>
+      <trans-unit id="tx_bpnrequestaccess_domain_model_request.request_result" xml:space="preserve">
+        <source>Resultaat</source>
+      </trans-unit>
+      <trans-unit id="tx_bpnrequestaccess_domain_model_request.request_result.I.0" xml:space="preserve">
+        <source>-- nog geen resultaat --</source>
+      </trans-unit>
+      <trans-unit id="tx_bpnrequestaccess_domain_model_request.request_result.I.1" xml:space="preserve">
+        <source>Toegestaan</source>
+      </trans-unit>
+      <trans-unit id="tx_bpnrequestaccess_domain_model_request.request_result.I.2" xml:space="preserve">
+        <source>Afgewezen</source>
+      </trans-unit>
+      <trans-unit id="tx_bpnrequestaccess_domain_model_request.usergroup" xml:space="preserve">
+        <source>Usergroup</source>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

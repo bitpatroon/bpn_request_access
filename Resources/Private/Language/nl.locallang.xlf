@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff version="1.0" standalone="yes">
+  <file source-language="en" datatype="plaintext" original="messages" data="2019-01-09T11-55-16" product-name="bpn_request_access">
+    <header/>
+    <body>
+      <trans-unit id="accessForm.error.user.1221560910" xml:space="preserve">
+        <source>This field is required.</source>
+        <target>Dit veld is verplicht.</target>
+      </trans-unit>
+      <trans-unit id="accessForm.error.user.1221560718" xml:space="preserve">
+        <source>This field is required.</source>
+        <target>Dit veld is verplicht.</target>
+      </trans-unit>
+      <trans-unit id="accessForm.error.opleidingsgebied.1221560718" xml:space="preserve">
+        <source>This field is required.</source>
+        <target>Dit veld is verplicht.</target>
+      </trans-unit>
+      <trans-unit id="accessForm.error.opleidingsgebied.1221560910" xml:space="preserve">
+        <source>This field is required.</source>
+        <target>Dit veld is verplicht.</target>
+      </trans-unit>
+      <trans-unit id="accessForm.error.permittedDuration.1221560718" xml:space="preserve">
+        <source>This field is required.</source>
+        <target>Dit veld is verplicht.</target>
+      </trans-unit>
+      <trans-unit id="none" xml:space="preserve">
+        <source>None</source>
+        <target>Geen</target>
+      </trans-unit>
+      <trans-unit id="send_new_request" xml:space="preserve">
+        <source>Send a new request</source>
+        <target>Nog een aanvraag indienen</target>
+      </trans-unit>
+      <trans-unit id="until" xml:space="preserve">
+        <source>Until</source>
+        <target>Tot</target>
+      </trans-unit>
+      <trans-unit id="request_access_usergroup_title" xml:space="preserve">
+        <source>Access right</source>
+        <target>Toegangsrecht</target>
+      </trans-unit>
+      <trans-unit id="request_access_start_title" xml:space="preserve">
+        <source>Starting</source>
+        <target>Vanaf</target>
+      </trans-unit>
+      <trans-unit id="request_access_permittedduration_title" xml:space="preserve">
+        <source>Duration</source>
+        <target>Duur</target>
+      </trans-unit>
+      <trans-unit id="reason_of_rejection" xml:space="preserve">
+        <source>Reason of rejection</source>
+        <target>Reden van afwijziging</target>
+      </trans-unit>
+      <trans-unit id="approve" xml:space="preserve">
+        <source>Approve</source>
+        <source>Goedkeuren</source>
+      </trans-unit>
+      <trans-unit id="reject" xml:space="preserve">
+        <source>Reject</source>
+        <source>Afkeuren</source>
+      </trans-unit>
+      <trans-unit id="from" xml:space="preserve">
+        <source>from</source>
+        <source>tot</source>
+      </trans-unit>
+      <trans-unit id="up_until" xml:space="preserve">
+        <source>until</source>
+        <source>tot en met</source>
+      </trans-unit>
+
+    </body>
+  </file>
+</xliff>

@@ -1,0 +1,38 @@
+{
+  "name": "bitpatroon/bpn_request_access",
+  "type": "typo3-cms-extension",
+  "description": "Automates requesting access",
+  "keywords": [
+    "typo3",
+    "groups",
+    "security",
+    "service"
+  ],
+  "license": "GPL-2.0-or-later",
+  "authors": [
+    {
+      "name": "Sjoerd Zonneveld",
+      "homepage": "https://www.bitpatroon.nl",
+      "role": "Developer"
+    }
+  ],
+  "minimum-stability": "stable",
+  "require": {
+      "bitpatroon/bpn_configuration": "^10.4",
+      "bitpatroon/bpn_handle": "^10.4",
+      "bitpatroon/bpn_variable_text": "^10.4"
+  },
+  "config": {
+    "optimize-autoloader": true
+  },
+  "autoload": {
+    "psr-4": {
+      "BPN\\BpnRequestAccess\\": "Classes"
+    }
+  },
+  "extra": {
+    "typo3/cms": {
+      "extension-key": "bpn_request_access"
+    }
+  }
+}

@@ -1,0 +1,17 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      xmlns:sl="http://typo3.org/ns/BPN/BpnRequestAccess/ViewHelpers"
+      xmlns:vt="http://typo3.org/ns/BPN/BpnVariableText/ViewHelpers"
+      data-namespace-typo3-fluid="true"
+      lang="en">
+
+<f:if condition="{user.userName}">
+    <f:then>{user.userName}</f:then>
+    <f:else>
+        <f:if condition="{user.email}">
+            <f:then>{user.email}</f:then>
+            <f:else>
+            </f:else>
+        </f:if>
+    </f:else>
+</f:if>
+</html>

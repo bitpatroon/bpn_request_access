@@ -1,0 +1,25 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      data-namespace-typo3-fluid="true"
+      lang="en">
+
+<f:variable name="id"><f:if condition="{id}"> id={id}</f:if></f:variable>
+<f:variable name="required">{f:if(condition: '{required}', then:'required')}</f:variable>
+<div class="row">
+    <div class="col-md-6 mb-3 ">
+        <label>{title}
+            <f:if condition="{required}"><span class="required">*</span></f:if>
+        </label>
+        <f:form.textarea id="{id}"
+                         name="{name}"
+                         class="form-control required"
+                         placeholder="{placeholder}">
+            <option value="">{f:if(condition: '{placeholder}', then:'{placeholder}')}</option>
+            <f:if condition="{options}">
+                <f:for each="{options}" as="item" key="__key">
+                    <option value="{__key}">{item}</option>
+                </f:for>
+            </f:if>
+        </f:form.textarea>
+    </div>
+</div>
+</html>

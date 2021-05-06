@@ -1,0 +1,68 @@
+<T3DataStructure>
+  <sheets>
+    <sDEF>
+      <ROOT>
+        <TCEforms>
+          <sheetTitle>LLL:EXT:bpn_request_access/Resources/Private/Language/flexform.xlf:tab_root_title</sheetTitle>
+        </TCEforms>
+        <type>array</type>
+        <el>
+          <settings.action>
+            <TCEforms>
+              <label>LLL:EXT:bpn_request_access/Resources/Private/Language/flexform.xlf:action</label>
+              <config>
+                <type>select</type>
+                <renderType>selectSingle</renderType>
+                <items type="array">
+                  <numIndex index="0" type="array">
+                    <numIndex index="0">
+                      LLL:EXT:bpn_request_access/Resources/Private/Language/flexform.xlf:switchableControllerActions.I.0
+                    </numIndex>
+                    <numIndex index="1">request</numIndex>
+                  </numIndex>
+                  <numIndex index="1" type="array">
+                    <numIndex index="0">
+                      LLL:EXT:bpn_request_access/Resources/Private/Language/flexform.xlf:switchableControllerActions.I.1
+                    </numIndex>
+                    <numIndex index="1">response</numIndex>
+                  </numIndex>
+                </items>
+              </config>
+              <onChange>reload</onChange>
+            </TCEforms>
+          </settings.action>
+          <settings.usergroups>
+            <TCEforms>
+              <exclude>1</exclude>
+              <label>LLL:EXT:bpn_request_access/Resources/Private/Language/flexform.xlf:usergroups</label>
+              <config>
+                <type>select</type>
+                <renderType>selectMultipleSideBySide</renderType>
+                <internal_type>db</internal_type>
+                <foreign_table>fe_groups</foreign_table >
+                <size>7</size>
+                <minitems>0</minitems>
+              </config>
+              <displayCond>FIELD:settings.action:=:request</displayCond>
+            </TCEforms>
+          </settings.usergroups>
+          <settings.landingPage>
+            <TCEforms>
+              <exclude>1</exclude>
+              <label>LLL:EXT:bpn_request_access/Resources/Private/Language/flexform.xlf:landing_page</label>
+              <config>
+                <type>group</type>
+                <internal_type>db</internal_type>
+                <allowed>pages</allowed>
+                <size>1</size>
+                <maxitems>1</maxitems>
+                <minitems>0</minitems>
+              </config>
+              <displayCond>FIELD:sDEF.settings.action:=:request</displayCond>
+            </TCEforms>
+          </settings.landingPage>
+        </el>
+      </ROOT>
+    </sDEF>
+  </sheets>
+</T3DataStructure>

@@ -1,0 +1,13 @@
+plugin.bpnrequestaccess_requestaccess {
+    settings {
+        verificationCode {
+            secureKey =
+            numberOfSecondsBeforeExpiration = 604800
+        }
+
+        email {
+            validatorName = Helpdesk
+            validatorEmail =
+        }
+    }
+}

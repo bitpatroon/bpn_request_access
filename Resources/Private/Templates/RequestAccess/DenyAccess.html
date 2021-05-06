@@ -1,0 +1,28 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      xmlns:sl="http://typo3.org/ns/BPN/BpnRequestAccess/ViewHelpers"
+      xmlns:vt="http://typo3.org/ns/BPN/BpnVariableText/ViewHelpers"
+      data-namespace-typo3-fluid="true"
+      lang="en">
+<f:layout name="Default"/>
+
+Template description
+
+<f:section name="main">
+    <div class="form">
+        <f:form action="denyAccessWithFeedback"
+                name="denyAccessFeedbackForm"
+                object="{denyAccessFeedbackForm}"
+                method="post">
+            <h3><f:translate key="reason_of_rejection" /></h3>
+            <f:render partial="Form/Textarea" arguments="{
+				name: 'denyAccessFeedbackForm[reason]',
+				placeholder:'reden...',
+				value: ''}" />
+            <f:form.hidden value="{verificationCode}"
+                           property="verificationCode"/>
+            <f:form.submit value="Verstuur"
+                           class="btn btn-primary"/>
+        </f:form>
+    </div>
+</f:section>
+</html>

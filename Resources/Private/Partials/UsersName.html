@@ -1,0 +1,15 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      xmlns:sl="http://typo3.org/ns/BPN/BpnRequestAccess/ViewHelpers"
+      xmlns:vt="http://typo3.org/ns/BPN/BpnVariableText/ViewHelpers"
+      data-namespace-typo3-fluid="true"
+      lang="en">
+
+<f:if condition="{user.name}">
+    <f:then>{user.name}</f:then>
+    <f:else>
+        <f:if condition="{user.firstName}">{user.firstName}</f:if>
+        <f:if condition="{user.middleName}"> {user.middleName} </f:if>
+        <f:if condition="{user.lastName}">{user.LastName}</f:if>
+    </f:else>
+</f:if>
+</html>

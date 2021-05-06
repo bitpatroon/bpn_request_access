@@ -1,0 +1,54 @@
+plugin.bpnrequestaccess_requestaccess {
+    settings {
+        permitDurations {
+            5 {
+                label = 1 dag
+                value = +1 day
+            }
+
+            10 {
+                label = 1 maand
+                value = +1 month
+            }
+
+            20 {
+                label = 2 maanden
+                value = +2 month
+            }
+
+            30 {
+                label = 3 maanden
+                value = +3 month
+            }
+        }
+
+        verificationCode {
+            secureKey = {$plugin.bpnrequestaccess_requestaccess.settings.verificationCode.secureKey}
+            numberOfSecondsBeforeExpiration = {$plugin.bpnrequestaccess_requestaccess.settings.verificationCode.numberOfSecondsBeforeExpiration}
+        }
+
+        email {
+            validatorName = {$plugin.bpnrequestaccess_requestaccess.settings.email.validatorName}
+            validatorEmail = {$plugin.bpnrequestaccess_requestaccess.settings.email.validatorEmail}
+        }
+    }
+}
+
+# Include JS for UserSearch select box
+page.includeJSFooterlibs {
+
+    moment_lib = EXT:bpn_request_access/Resources/Public/JavaScript/lib/momentjs/moment.js
+    moment_nl = EXT:bpn_request_access/Resources/Public/JavaScript/lib/momentjs/moment.nl.js
+    moment_timezone = EXT:bpn_request_access/Resources/Public/JavaScript/lib/momentjs/moment-timezone.js
+}
+
+page.includeJSFooter {
+    bpnrequestaccess_requestaccess = EXT:bpn_request_access/Resources/Public/JavaScript/RequestAccess.js
+    jquery-datetimepicker = EXT:bpn_request_access/Resources/Public/JavaScript/lib/jquery.datetimepicker/jquery.datetimepicker.full.js
+    select2 = EXT:bpn_request_access/Resources/Public/JavaScript/lib/select2/dist/js/select2.js
+}
+
+page.includeCSS {
+    jquery-datetimepicker = EXT:bpn_request_access/Resources/Public/JavaScript/lib/jquery.datetimepicker/_jquery.datetimepicker.css
+    select2 = EXT:bpn_request_access/Resources/Public/JavaScript/lib/select2/dist/css/select2.min.css
+}

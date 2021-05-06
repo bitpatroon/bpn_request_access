@@ -1,0 +1,4 @@
+email.validatorName =
+email.validatorEmail =
+verificationCode.secureKey =
+verificationCode.numberOfSecondsBeforeExpiration =
