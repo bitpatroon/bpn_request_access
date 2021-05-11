@@ -119,7 +119,7 @@ When storing new request, some handles need to be created in the back end.
 ## Example variable texts
 
 See [examples in Dutch](nl.examples.md) or <br />
-See [examples in English](en.examples.md) or <br />
+See [examples in English](en.examples.md)
 
 
 ## Thanks to 
