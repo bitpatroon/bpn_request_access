@@ -4,44 +4,48 @@
     <header/>
     <body>
       <trans-unit id="tx_bpnrequestaccess_domain_model_request" xml:space="preserve">
-        <source>Verzoek toegang digitale examenprojecten</source>
-        <target>Access request</target>
+        <source>Request access</source>
+        <target>Toegang aanvragen</target>
       </trans-unit>
       <trans-unit id="tx_bpnrequestaccess_domain_model_request.title" xml:space="preserve">
-        <source>Beschrijving verzoek</source>
-        <target>Title of request</target>
+        <source>Description of the request</source>
+        <target>Aanvraag beschrijving</target>
       </trans-unit>
       <trans-unit id="tx_bpnrequestaccess_domain_model_request.verification_code" xml:space="preserve">
-        <source>Verzoek code</source>
-        <target>Verification code</target>
+        <source>Verificiation code</source>
+        <target>Verificiatie code</target>
+      </trans-unit>
+      <trans-unit id="tx_bpnrequestaccess_domain_model_request.start" xml:space="preserve">
+        <source>Start</source>
+        <target>Start</target>
       </trans-unit>
       <trans-unit id="tx_bpnrequestaccess_domain_model_request.duration" xml:space="preserve">
-        <source>Lengte toegang</source>
-        <target>Duration of permitted access</target>
+        <source>Duration</source>
+        <target>Duur</target>
       </trans-unit>
       <trans-unit id="tx_bpnrequestaccess_domain_model_request.user_request_target" xml:space="preserve">
-        <source>Gebruiker die toegang vraagt</source>
-        <target>User getting access</target>
+        <source>User the access is requested for</source>
+        <target>Gebruiker waarvoor toegang wordt aangevraagd</target>
       </trans-unit>
       <trans-unit id="tx_bpnrequestaccess_domain_model_request.user_request_source" xml:space="preserve">
-        <source>Gebruiker die toegang aanvraagt</source>
-        <target>User performing access request</target>
+        <source>User requesting access</source>
+        <target>Gebruiker die toegang aanvraagt</target>
       </trans-unit>
       <trans-unit id="tx_bpnrequestaccess_domain_model_request.request_result" xml:space="preserve">
-        <source>Resultaat</source>
-        <target>Result</target>
+        <source>Result</source>
+        <target>Resultaat</target>
       </trans-unit>
       <trans-unit id="tx_bpnrequestaccess_domain_model_request.request_result.I.0" xml:space="preserve">
-        <source>-- nog geen resultaat --</source>
-        <target>-- no result yet --</target>
+        <source>-- no result yet --</source>
+        <target>-- nog geen resultaat --</target>
       </trans-unit>
       <trans-unit id="tx_bpnrequestaccess_domain_model_request.request_result.I.1" xml:space="preserve">
-        <source>Toegestaan</source>
-        <target>Allowed</target>
+        <source>Granted</source>
+        <target>Toegestaan</target>
       </trans-unit>
       <trans-unit id="tx_bpnrequestaccess_domain_model_request.request_result.I.2" xml:space="preserve">
-        <source>Afgewezen</source>
-        <target>Denied</target>
+        <source>Rejected</source>
+        <target>Afgewezen</target>
       </trans-unit>
       <trans-unit id="tx_bpnrequestaccess_domain_model_request.usergroup" xml:space="preserve">
         <source>Usergroup</source>
