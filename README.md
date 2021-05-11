@@ -13,11 +13,14 @@ Set values in plugin configuration for TypoScript template for
 
 ## Variable texts
 
+### Actors 
 Notice the following actors are in play:
 
 1. The Granter, the person granting or denying access.
 2. The Requester, the person making the request for access for Receiver
 3. The Reciever, the person for whom the access is requested.
+
+### Required labels
 
 Add variable texts records with the following labels
 
@@ -105,6 +108,19 @@ Add variable texts records with the following labels
 
 * 785325 Request was already processed
 * 790051 Request was not found
+
+## Page handles
+
+When storing new request, some handles need to be created in the back end.
+
+* page_handle_request_access
+  This handle should be added to the (folder) page that stores the requests.
+
+## Example variable texts
+
+See [examples in Dutch](nl.examples.md) or <br />
+See [examples in English](en.examples.md) or <br />
+
 
 ## Thanks to 
 Frans van der Veen.
