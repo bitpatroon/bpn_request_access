@@ -45,7 +45,7 @@ use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
 use TYPO3\CMS\Extbase\Object\ObjectManager;
 use TYPO3\CMS\Extbase\Property\TypeConverter\DateTimeConverter;
 
-class RequestAccessController extends ActionController // extends \SPL\SplLibrary\Controller\AbstractController
+class RequestAccessController extends ActionController
 {
     const ADMIN_ALLOW_ACCESS = '1';
     const ADMIN_DENY_ACCESS = '-1';
