@@ -51,6 +51,9 @@
       <trans-unit id="up_until" xml:space="preserve">
         <source>until</source>
       </trans-unit>
+      <trans-unit id="display_title" xml:space="preserve">
+        <source>Display title</source>
+      </trans-unit>
     </body>
   </file>
 </xliff>

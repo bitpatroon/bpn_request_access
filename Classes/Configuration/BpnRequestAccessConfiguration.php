@@ -89,14 +89,17 @@ class BpnRequestAccessConfiguration extends AbstractExtensionConfiguration
                 if (empty($value['label'])) {
                     throw new \RuntimeException('The label for the given date is empty', 1619690660);
                 }
-                $date = strtotime($value['value']);
-                if (-1 === $date || false === $date) {
-                    throw new \RuntimeException(
-                        'The date offset specified in allowedDurations cannot be interpreted by php', 1619690664
-                    );
+                $dateValue = $value['value'];
+                $date = $this->checkDate($dateValue);
+
+                if ((int)$value['future'] && $value['valueAddendum']) {
+                    if ($date < time()) {
+                        $dateValue .= ' ' . $value['valueAddendum'];
+                        $date = $this->checkDate($dateValue);
+                    }
                 }
-//                $date = new \DateTime($value['value']);
-                $durations[$value['value']] = $value['label']; //sprintf('%1$s (%2$s)', $value['label'], $date->format('d-m-Y'));
+
+                $durations[$value['value']] = $value['label'];
             }
         }
         $this->permittedDurations = $durations;
@@ -124,7 +127,7 @@ class BpnRequestAccessConfiguration extends AbstractExtensionConfiguration
             'Validator email was not configured and should be set in your TypoScript template. (email.validatorEmail)',
             1619729034
         );
-        if($settings['action'] === 'request'){
+        if ($settings['action'] === 'request') {
             $this->landingPage = (int)$this->getRequiredValueFromSettings(
                 $settings,
                 'landingPage',
@@ -214,5 +217,17 @@ class BpnRequestAccessConfiguration extends AbstractExtensionConfiguration
     public function getVerificationCodeNumberOfSecondsBeforeExpiration()
     {
         return $this->verificationCodeNumberOfSecondsBeforeExpiration;
+    }
+
+    protected function checkDate(string $dateValue) : int
+    {
+        $date = strtotime($dateValue);
+        if (!$date) {
+            throw new \RuntimeException(
+                'The date offset specified in allowedDurations cannot be interpreted by php', 1619690664
+            );
+        }
+
+        return $date;
     }
 }

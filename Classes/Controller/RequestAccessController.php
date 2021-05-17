@@ -125,12 +125,14 @@ class RequestAccessController extends ActionController
                 $this->frontendUserGroupRepository->findByIdentifiers(
                     GeneralUtility::intExplode(',', $this->settings['usergroups'])
                 ),
-                'title',
+                'display_title,title',
                 'uid'
             );
-            $data['permittedDuration'] = $this->toAssocArray(
+
+            $data['permittedDuration'] = $this->getPermittedDurationOptions(
                 $this->accessConfiguration->getPermittedDurations()
             );
+
             $this->view->assign('accessForm', $accessForm);
             $this->view->assign('data', $data);
         } catch (\Exception $exception) {
@@ -525,9 +527,22 @@ class RequestAccessController extends ActionController
 
     private function toAssocArray(array $findByIdentifiers, string $valueField = '', string $keyField = '')
     {
+        $valueFields = explode(',', $valueField);
+
         $result = [];
         foreach ($findByIdentifiers as $key => $item) {
-            $value = is_array($item) ? $item[$valueField] : $item;
+            if (is_array($item)) {
+                $value = '';
+                // set to first value in list with a value
+                foreach ($valueFields as $field) {
+                    if ($field && isset($item[$field]) && $item[$field]) {
+                        $value = $item[$field];
+                        break;
+                    }
+                }
+            } else {
+                $value = $item;
+            }
             $key = $keyField ? $item[$keyField] : $key;
             $result[$key] = $value;
         }
@@ -547,5 +562,22 @@ class RequestAccessController extends ActionController
         } else {
             $this->view->assign('errors', [$exception]);
         }
+    }
+
+    private function getPermittedDurationOptions(array $permittedDuration)
+    {
+        if (!$permittedDuration) {
+            return [];
+        }
+        $result = [];
+        foreach ($permittedDuration as $value => $title) {
+            $ts = strtotime($value);
+            $result[$value] = [
+                'title' => $title,
+                'data'  => "data-ts={$ts}"
+            ];
+        }
+
+        return $result;
     }
 }

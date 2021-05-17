@@ -53,21 +53,24 @@
       </trans-unit>
       <trans-unit id="approve" xml:space="preserve">
         <source>Approve</source>
-        <source>Goedkeuren</source>
+        <target>Goedkeuren</target>
       </trans-unit>
       <trans-unit id="reject" xml:space="preserve">
         <source>Reject</source>
-        <source>Afkeuren</source>
+        <target>Afkeuren</target>
       </trans-unit>
       <trans-unit id="from" xml:space="preserve">
         <source>from</source>
-        <source>tot</source>
+        <target>tot</target>
       </trans-unit>
       <trans-unit id="up_until" xml:space="preserve">
         <source>until</source>
-        <source>tot en met</source>
+        <target>tot en met</target>
       </trans-unit>
-
+      <trans-unit id="display_title" xml:space="preserve">
+        <source>Display title</source>
+        <target>Weergave title</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>

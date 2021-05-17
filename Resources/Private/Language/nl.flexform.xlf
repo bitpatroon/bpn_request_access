@@ -16,7 +16,7 @@
         <target>Toegang aanvragen</target>
       </trans-unit>
       <trans-unit id="switchableControllerActions.I.1" xml:space="preserve">
-        <source>Langdingspage plugin</source>
+        <source>Landingspage plugin</source>
         <target>Plugin voor op de landingspagina</target>
       </trans-unit>
       <trans-unit id="action" xml:space="preserve">

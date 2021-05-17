@@ -43,14 +43,15 @@
 
     function updateEndDate()
     {
-        var start = $('#input-start').val();
-        var duration = $('#input-permittedDuration').val();
-        console.log('RequestAccess.js:1620304419419:', start, duration);
-        if (start && duration) {
-            // calculate end date
-            var durationParts = duration.split(' ');
-            $('#input-end').text(moment(start, 'DD-MM-YYYY').add(parseInt(durationParts[0]), durationParts[1] + 's').format('DD-MM-YYYY'));
-        }
+        var $selection = $('#input-permittedDuration option:selected');
+        $selection.each(function (){
+            var tsVal = $(this).attr('data-ts') || null;
+            if(tsVal){
+                var ts = parseInt(tsVal);
+                $('#input-end').text(moment.unix(ts).format('DD-MM-YYYY'));
+            }
+            return false;
+        });
     }
 
     function initForm()

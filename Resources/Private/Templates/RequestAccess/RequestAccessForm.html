@@ -28,7 +28,7 @@ Template description
                       arguments="{id:'input-start', name:'tx_bpnrequestaccess_requestaccess[accessForm][start]', title:'Vanaf', required:true, value:data.start }"/>
 
             <f:render partial="Form/Select"
-                      arguments="{id:'input-permittedDuration', name:'tx_bpnrequestaccess_requestaccess[accessForm][permittedDuration]', title:'Duur', required:true, options:data.permittedDuration, placeholder:'Kies een tijdsduur' }"/>
+                      arguments="{id:'input-permittedDuration', name:'tx_bpnrequestaccess_requestaccess[accessForm][permittedDuration]', title:'Duur', required:true, options:data.permittedDuration, placeholder:'Kies een tijdsduur', data:{ts:'timestamp'} }"/>
 
             <div class="row">
                 <div class="col-md-6 mb-3 ">

@@ -19,7 +19,18 @@
             <option value="">{f:if(condition: '{placeholder}', then:'{placeholder}')}</option>
             <f:if condition="{options}">
                 <f:for each="{options}" as="item" key="__key">
-                    <option value="{__key}">{item}</option>
+                    <f:variable name="title"><f:if condition="{item.title}">
+                            <f:then>{item.title}</f:then>
+                            <f:else>{item}</f:else>
+                        </f:if></f:variable>
+                    <f:if condition="{item.data}">
+                        <f:then>
+                            <option value="{__key}" {item.data}>{title}</option>
+                        </f:then>
+                        <f:else>
+                            <option value="{__key}">{title}</option>
+                        </f:else>
+                    </f:if>
                 </f:for>
             </f:if>
         </select>

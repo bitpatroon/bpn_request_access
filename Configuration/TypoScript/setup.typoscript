@@ -20,6 +20,13 @@ plugin.bpnrequestaccess_requestaccess {
                 label = 3 maanden
                 value = +3 month
             }
+
+            100 {
+                label = Einde schooljaar
+                value = first day of October
+                future = 1
+                valueAddendum = next year
+            }
         }
 
         verificationCode {
