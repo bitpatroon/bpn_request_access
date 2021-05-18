@@ -6,6 +6,9 @@ plugin.bpnrequestaccess_requestaccess {
         }
 
         email {
+            # the e-mail address of the service sending the e-mail
+            serviceUserEmail =
+            # The e-mail of the helpdesk or service desk that approves the request
             validatorName = Helpdesk
             validatorEmail =
         }

@@ -39,6 +39,7 @@ use BPN\BpnRequestAccess\Service\ExpiringGroupsService;
 use BPN\BpnVariableText\Service\TextService;
 use BPN\Configuration\Configuration\ExtensionConfigurationManager;
 use TYPO3\CMS\Core\Domain\Repository\PageRepository;
+use TYPO3\CMS\Core\Log\LogManager;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Extbase\Domain\Model\FrontendUser;
 use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
@@ -190,7 +191,7 @@ class RequestAccessController extends ActionController
         }
     }
 
-    public function grantAccessAction($verificationCode)
+    public function grantAccessAction(string $verificationCode = '')
     {
         /** @var BpnRequestAccessConfiguration $allowAccessConfiguration */
         $allowAccessConfiguration = ExtensionConfigurationManager::getConfigurationStatic();
@@ -305,6 +306,8 @@ class RequestAccessController extends ActionController
                 $subject,
                 $output,
                 $allowAccessConfiguration->getExaminationAdminName(),
+                $allowAccessConfiguration->getServiceEmail(),
+                '',
                 $allowAccessConfiguration->getExaminationAdminEmailAddress()
             );
         } catch (\Exception $exception) {
@@ -331,6 +334,8 @@ class RequestAccessController extends ActionController
             ),
             $output,
             $allowAccessConfiguration->getExaminationAdminName(),
+            $allowAccessConfiguration->getServiceEmail(),
+            '',
             $allowAccessConfiguration->getExaminationAdminEmailAddress()
         );
     }
@@ -354,6 +359,8 @@ class RequestAccessController extends ActionController
             ),
             $output,
             $allowAccessConfiguration->getExaminationAdminName(),
+            $allowAccessConfiguration->getServiceEmail(),
+            '',
             $allowAccessConfiguration->getExaminationAdminEmailAddress()
         );
     }
@@ -382,6 +389,8 @@ class RequestAccessController extends ActionController
             ),
             $output,
             $allowAccessConfiguration->getExaminationAdminName(),
+            $allowAccessConfiguration->getServiceEmail(),
+            '',
             $allowAccessConfiguration->getExaminationAdminEmailAddress()
         );
     }
@@ -562,6 +571,9 @@ class RequestAccessController extends ActionController
         } else {
             $this->view->assign('errors', [$exception]);
         }
+
+        $logger = GeneralUtility::makeInstance(LogManager::class)->getLogger(__CLASS__);
+        $logger->error($exception->getMessage() . ' ' . $exception->getCode());
     }
 
     private function getPermittedDurationOptions(array $permittedDuration)

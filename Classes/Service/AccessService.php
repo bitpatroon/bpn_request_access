@@ -148,7 +148,7 @@ class AccessService
             ->setUsergroup($usergroup)
             ->setPid($storagePid);
         $data['username'] = $userRequestTarget->getUsername();
-        $data['opleidingsgebied'] = $usergroup->getUid();
+        $data['usergroup'] = $usergroup->getUid();
         $data['start'] = $start->format('d-m-Y');
         $data['duration'] = $duration;
         $allowAccessConfiguration = ExtensionConfigurationManager::getConfigurationStatic();
@@ -170,7 +170,7 @@ class AccessService
      * @param string $verificationCode supplied verification code
      * @param Request $request
      *
-     * @return bool true if successful false othwerise
+     * @return bool true if successful false otherwise
      */
     public function grantAccess($verificationCode, $request)
     {

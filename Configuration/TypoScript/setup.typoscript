@@ -37,6 +37,7 @@ plugin.bpnrequestaccess_requestaccess {
         email {
             validatorName = {$plugin.bpnrequestaccess_requestaccess.settings.email.validatorName}
             validatorEmail = {$plugin.bpnrequestaccess_requestaccess.settings.email.validatorEmail}
+            serviceDeskEmail =  {$plugin.bpnrequestaccess_requestaccess.settings.email.serviceUserEmail}
         }
     }
 }

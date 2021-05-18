@@ -61,6 +61,9 @@ class BpnRequestAccessConfiguration extends AbstractExtensionConfiguration
      */
     protected $doNotSendMail;
 
+    /** @var string */
+    protected $serviceEmail;
+
     /**
      * @var string
      */
@@ -127,6 +130,11 @@ class BpnRequestAccessConfiguration extends AbstractExtensionConfiguration
             'Validator email was not configured and should be set in your TypoScript template. (email.validatorEmail)',
             1619729034
         );
+        if (isset($settings['email']) && isset($settings['email']['serviceDeskEmail']) && $settings['email']['serviceDeskEmail']) {
+            $this->serviceEmail = $settings['email']['serviceDeskEmail'];
+        } else {
+            $this->serviceEmail = $this->examinationAdminEmailAddress;
+        }
         if ($settings['action'] === 'request') {
             $this->landingPage = (int)$this->getRequiredValueFromSettings(
                 $settings,
@@ -208,6 +216,15 @@ class BpnRequestAccessConfiguration extends AbstractExtensionConfiguration
     {
         return $this->verificationCodeSecureKey;
     }
+
+    /**
+     * @return string
+     */
+    public function getServiceEmail() : string
+    {
+        return $this->serviceEmail;
+    }
+
 
     /**
      * Gets the verificationCodeNumberOfSecondsBeforeExpiration property.
