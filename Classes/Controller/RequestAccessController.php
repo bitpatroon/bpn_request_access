@@ -197,8 +197,19 @@ class RequestAccessController extends ActionController
         $allowAccessConfiguration = ExtensionConfigurationManager::getConfigurationStatic();
 
         try {
+            if (!$verificationCode) {
+                throw new \RuntimeException(
+                    'Invalid request.',
+                    1621511970
+                );
+            }
+
             $accessService = $this->getAccessService();
             $request = $accessService->getRequest($verificationCode);
+            if (!$request) {
+                throw new \RuntimeException('Invalid request', 1621512618);
+            }
+
             if (!$accessService->isRequestSuccesful($request)) {
                 throw new \RuntimeException((int)$request, 1620315642);
             }
@@ -211,7 +222,7 @@ class RequestAccessController extends ActionController
                 $this->sendAccessGrantedEmailToSource($request, $allowAccessConfiguration);
             }
             $this->sendAccessGrantedEmailToTarget($request, $allowAccessConfiguration);
-            $this->view->assign('result', $result);
+            $this->view->assign('result', $result ? "granted" : "refused");
             $this->view->assign('request', $request);
         } catch (\Exception $exception) {
             $this->handleException($exception);

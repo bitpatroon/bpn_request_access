@@ -13,7 +13,7 @@ Set values in plugin configuration for TypoScript template for
 
 ## Variable texts
 
-### Actors 
+### Actors
 Notice the following actors are in play:
 
 1. The Granter, the person granting or denying access.
@@ -65,6 +65,7 @@ Add variable texts records with the following labels
 * `###user_expiring_groups###`
 * `###start_date###`
 * `###end_date###`
+* `###target_user_title###`
 * `###link_allow_access###` Required!!!
 * `###link_deny_access###` Required!!!
 
@@ -103,6 +104,7 @@ Add variable texts records with the following labels
 * `###link_allow_access###` the link to approve
 * `###link_deny_access###` the link to reject
 * `###user_request_denied_reason###` The reason given for denying the access.
+* `###target_user_title###` the function or title of the user
 
 ## Error codes:
 
@@ -122,7 +124,7 @@ See [examples in Dutch](nl.examples.md) or <br />
 See [examples in English](en.examples.md)
 
 
-## Thanks to 
+## Thanks to
 Frans van der Veen.
 <br/>May the force be with you!
 

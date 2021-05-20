@@ -54,6 +54,9 @@
       <trans-unit id="display_title" xml:space="preserve">
         <source>Display title</source>
       </trans-unit>
+      <trans-unit id="request_access_handler" xml:space="preserve">
+        <source>This is the request access handler. No request was received.</source>
+      </trans-unit>
     </body>
   </file>
 </xliff>

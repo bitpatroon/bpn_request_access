@@ -71,6 +71,10 @@
         <source>Display title</source>
         <target>Weergave title</target>
       </trans-unit>
+      <trans-unit id="request_access_handler" xml:space="preserve">
+        <source>This is the request access handler. No request was received.</source>
+        <target>Hier wordt de verwerking gedaan van het aanvragen van (extra) toegang. Er is geen verzoek ontvangen.</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>

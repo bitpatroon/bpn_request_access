@@ -5,40 +5,47 @@
       lang="en">
 <f:layout name="Default"/>
 
-Template description
-
 <f:variable name="usergroup_title"><f:translate arguments="request_access_usergroup_title"/></f:variable>
 <f:variable name="start_title"><f:translate arguments="request_access_start_title"/></f:variable>
 <f:variable name="permittedDuration_title"><f:translate arguments="request_access_permittedduration_title"/></f:variable>
 <f:section name="main">
-    <div class="intro">
-        <f:render partial="Errors" arguments="{errors:errors}" />
-        <vt:variableText labelName="request_access_form"/>
-    </div>
-    <div class="form">
-        <f:form action="requestAccess"
-                name="accessForm"
-                object="{accessForm}"
-                objectName="accessForm"
-        >
-            <f:render partial="Form/Select"
-                      arguments="{name:'tx_bpnrequestaccess_requestaccess[accessForm][userGroup]', title:'{usergroup_title}', required:true, options:data.usergroups, placeholder:'Maak een keuze', select2:1  }"/>
-
-            <f:render partial="Form/DateTime"
-                      arguments="{id:'input-start', name:'tx_bpnrequestaccess_requestaccess[accessForm][start]', title:'Vanaf', required:true, value:data.start }"/>
-
-            <f:render partial="Form/Select"
-                      arguments="{id:'input-permittedDuration', name:'tx_bpnrequestaccess_requestaccess[accessForm][permittedDuration]', title:'Duur', required:true, options:data.permittedDuration, placeholder:'Kies een tijdsduur', data:{ts:'timestamp'} }"/>
-
-            <div class="row">
-                <div class="col-md-6 mb-3 ">
-                    <label><f:translate key="until" /></label>
-                    <div  id="input-end">Kies een startdatum en duur.</div>
-                </div>
+    <f:if condition="{settings.action} == 'request'">
+        <f:then>
+            <div class="intro">
+                <f:render partial="Errors" arguments="{errors:errors}"/>
+                <vt:variableText labelName="request_access_form"/>
             </div>
-            <f:form.submit value="Aanvragen"
-                           class="btn btn-primary"/>
-        </f:form>
-    </div>
+            <div class="form">
+                <f:form action="requestAccess"
+                        name="accessForm"
+                        object="{accessForm}"
+                        objectName="accessForm"
+                >
+                    <f:render partial="Form/Select"
+                              arguments="{name:'tx_bpnrequestaccess_requestaccess[accessForm][userGroup]', title:'{usergroup_title}', required:true, options:data.usergroups, placeholder:'Maak een keuze', select2:1, classes:'requestaccess_accessForm_userGroup' }"/>
+
+                    <f:render partial="Form/DateTime"
+                              arguments="{id:'input-start', name:'tx_bpnrequestaccess_requestaccess[accessForm][start]', title:'Vanaf', required:true, value:data.start, classes:'requestaccess_accessForm_start' }"/>
+
+                    <f:render partial="Form/Select"
+                              arguments="{id:'input-permittedDuration', name:'tx_bpnrequestaccess_requestaccess[accessForm][permittedDuration]', title:'Duur', required:true, options:data.permittedDuration, placeholder:'Kies een tijdsduur', data:{ts:'timestamp'}, classes:'requestaccess_accessForm_permittedDuration' }"/>
+
+                    <div class="row">
+                        <div class="col-md-6 mb-3 ">
+                            <label>
+                                <f:translate key="until"/>
+                            </label>
+                            <div id="input-end">Kies een startdatum en duur.</div>
+                        </div>
+                    </div>
+                    <f:form.submit value="Aanvragen"
+                                   class="btn btn-primary"/>
+                </f:form>
+            </div>
+        </f:then>
+        <f:else>
+            <f:translate key="request_access_handler"/>
+        </f:else>
+    </f:if>
 </f:section>
 </html>

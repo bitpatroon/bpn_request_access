@@ -5,11 +5,11 @@
       lang="en">
 <f:layout name="Default"/>
 
-Template description
-
 <f:section name="main">
     <f:render partial="Errors" arguments="{errors:errors}" />
-    <vt:variableText labelName="request_access_requested"/>
+    <div data-response="request_access_requested">
+        <vt:variableText labelName="request_access_requested"/>
+    </div>
     <p>
         <vt:variableText labelName="request_access_requested_another"/>
     </p>

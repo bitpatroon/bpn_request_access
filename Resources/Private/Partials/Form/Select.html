@@ -7,15 +7,15 @@
 <f:variable name="required_attr">{f:if(condition: '{required}', then:'required="required"')}</f:variable>
 <f:variable name="placeHolder">placeholder={f:if(condition: '{placeHolder}', then: placeHolder, else: title )}</f:variable>
 <f:variable name="select2">{f:if(condition: '{select2}', then: 'data-s2=1')}</f:variable>
+<f:variable name="classes">{f:if(condition: '{classes}', then: classes)}</f:variable>
 <div class="row">
     <div class="col mb-3">
         <label>{title}
             <f:if condition="{required}"><span class="required">*</span></f:if>
         </label>
         <select {id} name="{name}"
-                 class="form-control {required}"
-                 {select2} {required_attr}
-        >
+                 class="form-control {required} {classes}"
+                 {select2} {required_attr}>
             <option value="">{f:if(condition: '{placeholder}', then:'{placeholder}')}</option>
             <f:if condition="{options}">
                 <f:for each="{options}" as="item" key="__key">

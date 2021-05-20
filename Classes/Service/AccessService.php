@@ -230,7 +230,7 @@ class AccessService
     }
 
     /**
-     * Gets the request thorugh the given verificationCode, or error result code.
+     * Gets the request trough the given verificationCode, or error result code.
      *
      * @param string $verificationCode
      *

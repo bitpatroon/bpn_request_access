@@ -9,6 +9,7 @@
         <vt:variableText.marker name="requesting_user_email"><f:render partial="UserNameOrEmail" arguments="{user:request.userRequestSource}"/></vt:variableText.marker>
         <vt:variableText.marker name="target_user_full_name"><f:render partial="UsersName" arguments="{user:request.userRequestTarget}"/></vt:variableText.marker>
         <vt:variableText.marker name="target_user_email"><f:render partial="UserNameOrEmail" arguments="{user:request.userRequestTarget}"/></vt:variableText.marker>
+        <vt:variableText.marker name="target_user_title">{f:if(condition: '{request.userRequestTarget.title}', then:'{request.userRequestTarget.title}')}}</vt:variableText.marker>
         <vt:variableText.marker name="requesting_usergroup">{request.userGroup.title}</vt:variableText.marker>
         <vt:variableText.marker name="user_expiring_groups"><f:if condition="{activeExpiringGroups}">
             <f:then><ul>

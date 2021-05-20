@@ -5,12 +5,13 @@
 <f:variable name="id"><f:if condition="{id}"> id={id}</f:if></f:variable>
 <f:variable name="required">{f:if(condition: '{required}', then:'required')}</f:variable>
 <f:variable name="placeHolder">placeholder={f:if(condition: '{placeHolder}', then: placeHolder, else: title )}</f:variable>
+<f:variable name="classes">{f:if(condition: '{classes}', then: classes)}</f:variable>
 <div class="row">
     <div class="col mb-3">
         <label>{title}
             <f:if condition="{required}"><span class="required">*</span></f:if>
         </label>
-        <input {id} type="text" name="{name}" value="{value}" class="form-control" {required} {placeHolder} data-datepicker="1">
+        <input {id} type="text" name="{name}" value="{value}" class="form-control {classes}" {required} {placeHolder} data-datepicker="1">
     </div>
 </div>
 </html>

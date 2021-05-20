@@ -36,6 +36,8 @@ Extra toegang aanvraag
 
 <p>Gebruiker ###REQUESTING_USER_FULL_NAME### (###REQUESTING_USER_EMAIL###) wil toegang aanvragen voor ###TARGET_USER_FULL_NAME### (###TARGET_USER_EMAIL###)</p>
 
+<p>De persoon heeft als functie ###target_user_title### </p>
+
 <p>De toegang is voor "###REQUESTING_USERGROUP###" en geldt van ###START_DATE### tot ###END_DATE###</p>
 
 <p>Gebruiker heeft nu deze verlopende groepen:</p>
