@@ -12,14 +12,9 @@
                 object="{denyAccessFeedbackForm}"
                 method="post">
             <h3><f:translate key="reason_of_rejection" /></h3>
-            <f:render partial="Form/Textarea" arguments="{
-				name: 'denyAccessFeedbackForm[reason]',
-				placeholder:'reden...',
-				value: ''}" />
-            <f:form.hidden value="{verificationCode}"
-                           property="verificationCode"/>
-            <f:form.submit value="Verstuur"
-                           class="btn btn-primary"/>
+            <f:render partial="Form/Textarea" arguments="{name: 'denyAccessFeedbackForm[reason]',placeholder:'reden...',value: '', classes:'denyaccessfeedbackform_reason'}" />
+            <f:form.hidden value="{verificationCode}" property="verificationCode"/>
+            <f:form.submit value="Verstuur" class="btn btn-primary"/>
         </f:form>
     </div>
 </f:section>
